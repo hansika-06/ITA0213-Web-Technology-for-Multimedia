@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relative Positioning – Clear Output</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8e9;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a237e;
+        }
+
+        /* Parent container */
+        .parent {
+            width: 500px;
+            height: 300px;
+            margin: 30px auto;
+            background-color: #bbdefb;
+            border: 4px dashed #0d47a1;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Child boxes */
+        .child {
+            width: 180px;
+            padding: 15px;
+            font-weight: bold;
+            position: relative;
+            border: 3px solid black;
+        }
+
+        /* Child 1 */
+        .one {
+            background-color: #ffccbc;
+            top: 30px;
+            left: 30px;
+        }
+
+        /* Child 2 */
+        .two {
+            background-color: #c8e6c9;
+            top: 60px;
+            left: 120px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Relative Positioning</h1>
+    <p>Boxes move from their original position but remain inside the parent.</p>
+
+    <div class="parent">
+        PARENT ELEMENT
+
+        <div class="child one">
+            CHILD 1<br>(top:30px, left:30px)
+        </div>
+
+        <div class="child two">
+            CHILD 2<br>(top:60px, left:120px)
+        </div>
+    </div>
+
+</body>
+</html>
