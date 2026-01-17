@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+        }
+
+        .container {
+            width: 420px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d47a1;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Employee Registration</h2>
+
+        <form>
+            <label>Employee Name</label>
+            <input type="text" placeholder="Enter employee name" required>
+
+            <label>Employee ID</label>
+            <input type="text" placeholder="Enter employee ID" required>
+
+            <label>Address</label>
+            <textarea rows="3" placeholder="Enter address"></textarea>
+
+            <label>Department</label>
+            <input type="text" placeholder="Enter department">
+
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="Enter mobile number" required>
+
+            <label>City</label>
+            <select>
+                <option>Select City</option>
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+            </select>
+
+            <input type="submit" value="Register" class="btn">
+        </form>
+    </div>
+
+</body>
+</html>
