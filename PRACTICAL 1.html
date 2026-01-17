@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Header and Footer using JavaScript</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        function createHeader() {
+
+            var header = document.createElement("header");
+            header.style.backgroundColor = "#e0f7fa";
+            header.style.padding = "20px";
+            header.style.textAlign = "center";
+
+            var h1 = document.createElement("h1");
+            h1.innerText = "My Website";
+
+            var h2 = document.createElement("h2");
+            h2.innerText = "Learning HTML with JavaScript";
+
+            var p = document.createElement("p");
+            p.innerText = "This header is created using JavaScript";
+
+            var nav = document.createElement("nav");
+
+            var link1 = document.createElement("a");
+            link1.href = "#";
+            link1.innerText = "Home";
+            link1.style.margin = "10px";
+
+            var link2 = document.createElement("a");
+            link2.href = "#";
+            link2.innerText = "About";
+            link2.style.margin = "10px";
+
+            var link3 = document.createElement("a");
+            link3.href = "#";
+            link3.innerText = "Contact";
+            link3.style.margin = "10px";
+
+            nav.appendChild(link1);
+            nav.appendChild(link2);
+            nav.appendChild(link3);
+
+            header.appendChild(h1);
+            header.appendChild(h2);
+            header.appendChild(p);
+            header.appendChild(nav);
+
+            // Insert header at TOP of body
+            document.body.prepend(header);
+        }
+    </script>
+</head>
+
+<body onload="createHeader()">
+
+    <main>
+        <h3>Welcome to the Main Content Area</h3>
+        <p>This is the body section of the webpage.</p>
+    </main>
+
+    <footer>
+        <p>© 2026 My Website | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
