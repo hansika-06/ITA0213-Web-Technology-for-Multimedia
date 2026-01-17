@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearest Odd Number</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Nearest Odd Number</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+
+    <br>
+    <button onclick="findOdd()">Find Nearest Odd</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<script>
+    function findOdd() {
+        var num = parseInt(document.getElementById("num").value);
+
+        if (isNaN(num)) {
+            document.getElementById("output").innerHTML = "⚠️ Please enter a valid number";
+            return;
+        }
+
+        if (num % 2 !== 0) {
+            document.getElementById("output").innerHTML =
+                "✅ Nearest odd number is: <b>" + num + "</b>";
+        } else {
+            document.getElementById("output").innerHTML =
+                "✅ Nearest odd number is: <b>" + (num - 1) + "</b>";
+        }
+    }
+</script>
+
+</body>
+</html>
