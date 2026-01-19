@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture Slider using Radio Buttons</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+        }
+
+        .slider-container{
+            width:420px;
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.4);
+            color:black;
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:15px;
+        }
+
+        /* Slider area */
+        .slider{
+            width:100%;
+            height:250px;
+            overflow:hidden;
+            border-radius:10px;
+            position:relative;
+        }
+
+        .slides{
+            width:300%;
+            height:100%;
+            display:flex;
+            transition:0.8s;
+        }
+
+        .slides img{
+            width:100%;
+            height:100%;
+        }
+
+        /* Radio buttons */
+        input[type="radio"]{
+            display:none;
+        }
+
+        /* Navigation buttons */
+        .nav{
+            text-align:center;
+            margin-top:10px;
+        }
+
+        .nav label{
+            display:inline-block;
+            width:15px;
+            height:15px;
+            background:#bbb;
+            border-radius:50%;
+            margin:5px;
+            cursor:pointer;
+        }
+
+        /* Slide movement */
+        #img1:checked ~ .slider .slides{
+            margin-left:0;
+        }
+        #img2:checked ~ .slider .slides{
+            margin-left:-100%;
+        }
+        #img3:checked ~ .slider .slides{
+            margin-left:-200%;
+        }
+
+        /* Active radio indicator */
+        #img1:checked ~ .nav label[for="img1"],
+        #img2:checked ~ .nav label[for="img2"],
+        #img3:checked ~ .nav label[for="img3"]{
+            background:#667eea;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="slider-container">
+    <h2>Picture Slider</h2>
+
+    <!-- Radio Buttons -->
+    <input type="radio" name="slider" id="img1" checked>
+    <input type="radio" name="slider" id="img2">
+    <input type="radio" name="slider" id="img3">
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="https://picsum.photos/420/250?1">
+            <img src="https://picsum.photos/420/250?2">
+            <img src="https://picsum.photos/420/250?3">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <label for="img1"></label>
+        <label for="img2"></label>
+        <label for="img3"></label>
+    </div>
+</div>
+
+</body>
+</html>

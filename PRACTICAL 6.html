@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Colorful Float Positioning</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    padding:50px;
+    color:white;
+}
+
+h2{
+    margin-bottom:25px;
+    text-align:center;
+}
+
+/* Container */
+.container{
+    width:520px;
+    height:320px;
+    margin:auto;
+    border-radius:15px;
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Common box */
+.box{
+    width:220px;
+    height:150px;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    line-height:150px;
+    border-radius:15px;
+    color:white;
+    transition:0.5s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* First box */
+.box1{
+    float:left;
+    background: linear-gradient(135deg,#43cea2,#185a9d);
+}
+
+/* Second box overlapping */
+.box2{
+    float:left;
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    margin-left:-130px;
+    margin-top:70px;
+}
+
+/* Hover motion */
+.box2:hover{
+    margin-left:-60px;
+    transform:rotate(-3deg) scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<h2>Float Positioning with Colorful Overlapping Elements</h2>
+
+<div class="container">
+    <div class="box box1">BOX 1</div>
+    <div class="box box2">BOX 2</div>
+</div>
+
+</body>
+</html>

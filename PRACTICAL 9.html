@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation using JavaScript</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+        }
+
+        .box{
+            background: rgba(255,255,255,0.15);
+            padding:30px;
+            width:420px;
+            border-radius:18px;
+            box-shadow:0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:10px;
+        }
+
+        .format{
+            background: rgba(0,0,0,0.25);
+            padding:12px;
+            border-radius:10px;
+            font-size:14px;
+            margin-bottom:15px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            margin-bottom:10px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background: linear-gradient(135deg,#ff512f,#dd2476);
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        .message{
+            margin-top:15px;
+            padding:12px;
+            border-radius:8px;
+            font-weight:bold;
+            text-align:center;
+        }
+
+        .success{
+            background: rgba(0,255,0,0.25);
+        }
+
+        .error{
+            background: rgba(255,0,0,0.25);
+        }
+
+        .examples{
+            margin-top:15px;
+            font-size:14px;
+            background: rgba(255,255,255,0.1);
+            padding:10px;
+            border-radius:10px;
+        }
+
+        .valid{
+            color:#7CFF7C;
+        }
+
+        .invalid{
+            color:#FF9A9A;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Email Validation</h2>
+
+    <div class="format">
+        <strong>Email Format:</strong><br>
+        username@domain.extension<br>
+        <small>Example: student@gmail.com</small>
+    </div>
+
+    <input type="text" id="email" placeholder="Enter Email ID" onkeyup="validateEmail()">
+
+    <button onclick="validateEmail()">Validate Email</button>
+
+    <div id="result" class="message"></div>
+
+    <div class="examples">
+        <strong>Examples:</strong><br>
+        <span class="valid">✔ valid@gmail.com</span><br>
+        <span class="valid">✔ user123@yahoo.in</span><br>
+        <span class="invalid">✖ user@</span><br>
+        <span class="invalid">✖ @gmail.com</span><br>
+        <span class="invalid">✖ user@gmail</span>
+    </div>
+</div>
+
+<script>
+function validateEmail(){
+    let email = document.getElementById("email").value;
+    let result = document.getElementById("result");
+
+    // Email validation pattern
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(email === ""){
+        result.innerHTML = "Please enter an email address";
+        result.className = "message error";
+    }
+    else if(pattern.test(email)){
+        result.innerHTML = "Valid Email Address ✔";
+        result.className = "message success";
+    }
+    else{
+        result.innerHTML = "Invalid Email Address ✖ (Check format)";
+        result.className = "message error";
+    }
+}
+</script>
+
+</body>
+</html>

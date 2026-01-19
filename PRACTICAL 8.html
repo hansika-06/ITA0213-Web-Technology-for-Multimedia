@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Number Operations</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+        }
+
+        .box{
+            background: rgba(255,255,255,0.15);
+            padding:30px;
+            width:380px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            border:none;
+            border-radius:8px;
+            margin-bottom:15px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background: linear-gradient(135deg,#ff512f,#dd2476);
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        .result{
+            margin-top:20px;
+            background:rgba(0,0,0,0.25);
+            padding:15px;
+            border-radius:10px;
+        }
+
+        .result p{
+            margin:8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>JavaScript Number Operations</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <p id="exp"></p>
+        <p id="decimal"></p>
+        <p id="string"></p>
+        <p id="negInfinity"></p>
+    </div>
+</div>
+
+<script>
+function calculate(){
+    let value = document.getElementById("num").value;
+
+    if(value === ""){
+        alert("Please enter a number");
+        return;
+    }
+
+    let number = Number(value);
+
+    // Exponential value
+    let expValue = number.toExponential(2);
+
+    // Limit decimal digits
+    let fixedValue = number.toFixed(3);
+
+    // Convert number to string
+    let stringValue = number.toString();
+
+    // Negative Infinity
+    let negInf = Number.NEGATIVE_INFINITY;
+
+    document.getElementById("exp").innerHTML =
+        "Exponential Value: " + expValue;
+
+    document.getElementById("decimal").innerHTML =
+        "Limited Decimal Value: " + fixedValue;
+
+    document.getElementById("string").innerHTML =
+        "Number converted to String: " + stringValue;
+
+    document.getElementById("negInfinity").innerHTML =
+        "Negative Infinity: " + negInf;
+}
+</script>
+
+</body>
+</html>
