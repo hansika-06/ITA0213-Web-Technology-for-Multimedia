@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Melody Website – Absolute Positioning</title>
+
+<style>
+/* General */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,#fdfbfb,#e8f0ff,#fcefee);
+    color:#333;
+}
+
+/* Sticky Navigation */
+nav{
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.97);
+    padding:15px 40px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    z-index:1000;
+}
+
+nav .logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#6a11cb;
+    margin-right:30px;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#444;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ff6f91;
+}
+
+/* Hero Section */
+header{
+    text-align:center;
+    padding:90px 20px;
+    background: linear-gradient(to right,#a18cd1,#fbc2eb);
+    color:white;
+}
+
+header h1{
+    font-size:44px;
+}
+
+header p{
+    font-size:18px;
+}
+
+header button{
+    margin-top:25px;
+    padding:14px 34px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#6a11cb;
+    cursor:pointer;
+}
+
+header button:hover{
+    background:#ffeaa7;
+}
+
+/* Feature Highlights */
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:60px auto;
+    width:80%;
+}
+
+.feature-box{
+    background:white;
+    padding:30px;
+    width:30%;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-8px);
+}
+
+.feature-box h3{
+    color:#6a11cb;
+}
+
+/* Overlapping Absolute Section */
+.overlap-section{
+    position:relative;
+    height:320px;
+    margin:80px auto;
+    width:80%;
+}
+
+/* Cards */
+.card{
+    width:320px;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+    position:absolute;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* Back Card */
+.card-back{
+    background: linear-gradient(135deg,#e0c3fc,#8ec5fc);
+    top:70px;
+    left:38%;
+}
+
+/* Front Card */
+.card-front{
+    background: linear-gradient(135deg,#ffecd2,#fcb69f);
+    top:20px;
+    left:45%;
+    z-index:2;
+}
+
+/* Content Section */
+.content{
+    background:white;
+    margin:60px auto;
+    width:80%;
+    padding:45px;
+    border-radius:22px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.08);
+}
+
+.content h2{
+    color:#6a11cb;
+}
+
+/* Call to Action */
+.cta{
+    text-align:center;
+    padding:60px 20px;
+    background: linear-gradient(to right,#fbc2eb,#a6c1ee);
+    color:#333;
+}
+
+.cta h2{
+    font-size:32px;
+}
+
+.cta button{
+    margin-top:20px;
+    padding:14px 32px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:#6a11cb;
+    color:white;
+    cursor:pointer;
+}
+
+.cta button:hover{
+    background:#ff6f91;
+}
+
+/* Footer */
+footer{
+    background:#6a11cb;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <span class="logo">MelodyWeb</span>
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Design</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- Hero -->
+<header>
+    <h1>Soft Melody Website</h1>
+    <p>Professional Design Using Absolute Positioning</p>
+    <button>Explore More</button>
+</header>
+
+<!-- Feature Highlights -->
+<section class="features">
+    <div class="feature-box">
+        <h3>🎨 Melody UI</h3>
+        <p>Soft pastel colors for eye comfort.</p>
+    </div>
+    <div class="feature-box">
+        <h3>📐 Absolute Layout</h3>
+        <p>Overlapping elements using CSS.</p>
+    </div>
+    <div class="feature-box">
+        <h3>🚀 Modern Design</h3>
+        <p>Looks like a real professional website.</p>
+    </div>
+</section>
+
+<!-- Overlapping Section -->
+<section class="overlap-section">
+    <div class="card card-back">
+        <h3>Background Card</h3>
+        <p>Positioned absolutely inside a relative container.</p>
+    </div>
+
+    <div class="card card-front">
+        <h3>Front Card</h3>
+        <p>This card overlaps the background card.</p>
+    </div>
+</section>
+
+<!-- Content -->
+<section class="content">
+    <h2>Why Absolute Positioning?</h2>
+    <p>
+        Absolute positioning allows elements to overlap and be placed
+        precisely. This design demonstrates how modern websites
+        use this technique with clean visuals and melody colors.
+    </p>
+</section>
+
+<!-- Call To Action -->
+<section class="cta">
+    <h2>Ready to Build Beautiful Websites?</h2>
+    <button>Get Started Now</button>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Melody Website | Designed for Academic & Real Use</p>
+</footer>
+
+</body>
+</html>
