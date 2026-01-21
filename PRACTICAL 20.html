@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emojis & CSS Positioning</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c2c54;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .box {
+            width: 260px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 14px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Fixed emoji size */
+        .emoji {
+            font-size: 42px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Positioning styles */
+        .static {
+            background: #ff6f61;
+            position: static;
+        }
+
+        .relative {
+            background: #5f27cd;
+            position: relative;
+            left: 25px;
+        }
+
+        .absolute-container {
+            position: relative;
+            height: 220px;
+            background: #feca57;
+            border-radius: 14px;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .absolute {
+            background: #1dd1a1;
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            width: 220px;
+        }
+
+        .fixed {
+            background: #222f3e;
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+            width: 220px;
+            font-size: 15px;
+        }
+
+        .sticky {
+            background: #ee5253;
+            position: sticky;
+            top: 0;
+            margin: 20px;
+        }
+
+        .content-text {
+            font-size: 14px;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Emojis with Fixed Size & CSS Positioning</h2>
+
+<div class="container">
+
+    <div class="box static">
+        <span class="emoji">😀</span>
+        <b>Static Position</b>
+        <div class="content-text">
+            This is the default positioning method.
+            Elements appear in the normal document flow
+            without any special alignment.
+        </div>
+    </div>
+
+    <div class="box relative">
+        <span class="emoji">🚀</span>
+        <b>Relative Position</b>
+        <div class="content-text">
+            The element is positioned relative to its
+            original position using top, left, right,
+            or bottom properties.
+        </div>
+    </div>
+
+    <div class="absolute-container">
+        <div class="box absolute">
+            <span class="emoji">📍</span>
+            <b>Absolute Position</b>
+            <div class="content-text">
+                This element is positioned relative to
+                its nearest positioned parent container
+                and removed from normal flow.
+            </div>
+        </div>
+    </div>
+
+    <div class="box sticky">
+        <span class="emoji">📌</span>
+        <b>Sticky Position</b>
+        <div class="content-text">
+            This element behaves like relative positioning
+            until a scroll threshold is reached, then
+            becomes fixed.
+        </div>
+    </div>
+
+</div>
+
+<div class="box fixed">
+    <span class="emoji">💬</span>
+    <b>Fixed Position</b>
+    <div class="content-text">
+        This element stays fixed at a specific position
+        on the screen even when the page is scrolled.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #ff6f61, #ff9f43);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c2c54;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #feca57;
+        }
+
+        /* Main Section */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: #5f27cd;
+            text-align: center;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Form */
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background: #1dd1a1;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #10ac84;
+        }
+
+        /* Footer */
+        footer {
+            background: #222f3e;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Job Portal</h1>
+    <p>Find Your Dream Job Today</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Jobs</a>
+    <a href="#">Companies</a>
+    <a href="#">Post Resume</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Latest Jobs</h3>
+        <ul>
+            <li>Software Developer</li>
+            <li>Web Designer</li>
+            <li>Data Analyst</li>
+            <li>Network Engineer</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Top Companies</h3>
+        <ul>
+            <li>Google</li>
+            <li>Microsoft</li>
+            <li>Amazon</li>
+            <li>TCS</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Apply for Job</h3>
+        <form>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email ID">
+            <select>
+                <option>Select Job Role</option>
+                <option>Software Developer</option>
+                <option>Web Designer</option>
+                <option>Data Analyst</option>
+                <option>Network Engineer</option>
+            </select>
+            <button type="submit">Apply Now</button>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Smart Job Portal | All Rights Reserved
+</footer>
+
+</body>
+</html>
