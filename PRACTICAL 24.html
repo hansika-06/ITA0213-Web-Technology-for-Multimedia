@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Date and Time using JavaScript</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(120deg,#43cea2,#185a9d);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:rgba(0,0,0,0.35);
+    padding:30px 40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+h1{
+    margin-bottom:20px;
+    color:#ffeb3b;
+}
+
+#dateTime{
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+
+<script>
+function showDateTime(){
+    let now = new Date();
+
+    let date = now.toDateString();
+    let time = now.toLocaleTimeString();
+
+    document.getElementById("dateTime").innerHTML =
+        "📅 Date : " + date + "<br>⏰ Time : " + time;
+}
+
+setInterval(showDateTime, 1000);
+</script>
+</head>
+
+<body onload="showDateTime()">
+
+<div class="box">
+    <h1>Current Date & Time</h1>
+    <div id="dateTime"></div>
+</div>
+
+</body>
+</html>

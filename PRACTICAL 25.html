@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>String Object Operations</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(120deg,#ff9966,#ff5e62);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:rgba(0,0,0,0.35);
+    padding:30px 40px;
+    border-radius:15px;
+    width:70%;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+h1{
+    text-align:center;
+    color:#ffeb3b;
+    margin-bottom:25px;
+}
+
+.result{
+    font-size:18px;
+    line-height:1.8;
+}
+</style>
+
+<script>
+function stringOperations(){
+
+    let str1 = "JavaScript";
+    let str2 = "Programming";
+
+    // (1) Returning the character at a specified location
+    let charAtIndex = str1.charAt(4);
+
+    // (2) Returns the unicode of the character at the specified index
+    let unicodeValue = str1.charCodeAt(4);
+
+    // (3) Joins two or more strings and returns a new string
+    let joinedString = str1.concat(" ", str2);
+
+    // (4) Converts unicode value to string
+    let unicodeToString = String.fromCharCode(65);
+
+    // (5) Converts a string to uppercase letters
+    let upperCaseString = str1.toUpperCase();
+
+    document.getElementById("output").innerHTML =
+        "(1) Character at index 4 in \"" + str1 + "\" : <b>" + charAtIndex + "</b><br>" +
+        "(2) Unicode of character '" + charAtIndex + "' : <b>" + unicodeValue + "</b><br>" +
+        "(3) Joined string : <b>" + joinedString + "</b><br>" +
+        "(4) Unicode value 65 converted to string : <b>" + unicodeToString + "</b><br>" +
+        "(5) Uppercase string : <b>" + upperCaseString + "</b>";
+}
+</script>
+</head>
+
+<body onload="stringOperations()">
+
+<div class="container">
+    <h1>String Object Operations</h1>
+    <div class="result" id="output"></div>
+</div>
+
+</body>
+</html>

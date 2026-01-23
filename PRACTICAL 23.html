@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hotel Management - Order Confirmation</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:60%;
+    margin:50px auto;
+    background:#ffffff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#e91e63;
+}
+
+.menu{
+    background:#fff3e0;
+    padding:20px;
+    border-radius:10px;
+}
+
+.menu label{
+    display:block;
+    font-size:18px;
+    margin:8px 0;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    font-size:16px;
+    background:#4caf50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#388e3c;
+}
+
+.output{
+    margin-top:30px;
+    background:#e8f5e9;
+    padding:20px;
+    border-radius:10px;
+    display:none;
+}
+</style>
+
+<script>
+function confirmOrder(){
+    let dishes = document.getElementsByName("dish");
+    let result = document.getElementById("result");
+    let output = "<h3>🍽️ Confirmed Dishes:</h3><ul>";
+    let selected = false;
+
+    for(let i=0;i<dishes.length;i++){
+        if(dishes[i].checked){
+            output += "<li>" + dishes[i].value + "</li>";
+            selected = true;
+        }
+    }
+
+    output += "</ul>";
+
+    if(!selected){
+        result.innerHTML = "<h3>No dishes selected!</h3>";
+    } else {
+        result.innerHTML = output + "<p><b>Thank you! Visit Again 😊</b></p>";
+    }
+
+    document.getElementById("outputBox").style.display="block";
+}
+</script>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🏨 Sheela  Management System</h1>
+
+    <div class="menu">
+        <h2>Select Your Dishes</h2>
+
+        <label><input type="checkbox" name="dish" value="Idli"> Idli</label>
+        <label><input type="checkbox" name="dish" value="Dosa"> Dosa</label>
+        <label><input type="checkbox" name="dish" value="Veg Fried Rice"> Veg Fried Rice</label>
+        <label><input type="checkbox" name="dish" value="Paneer Butter Masala"> Paneer Butter Masala</label>
+        <label><input type="checkbox" name="dish" value="Ice Cream"> Ice Cream</label>
+
+        <button onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <div class="output" id="outputBox">
+        <div id="result"></div>
+    </div>
+</div>
+
+</body>
+</html>

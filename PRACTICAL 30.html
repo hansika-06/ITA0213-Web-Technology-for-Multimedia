@@ -1,0 +1,150 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee Registration</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    color:white;
+}
+
+.container{
+    width:70%;
+    margin:50px auto;
+    background:rgba(0,0,0,0.4);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+
+h1{
+    text-align:center;
+    color:#ffeb3b;
+}
+
+table{
+    width:100%;
+    margin-top:20px;
+}
+
+td{
+    padding:10px;
+    font-size:16px;
+}
+
+input, select, textarea{
+    width:95%;
+    padding:8px;
+    border-radius:6px;
+    border:none;
+}
+
+input[type=submit]{
+    background:#4caf50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+input[type=submit]:hover{
+    background:#2e7d32;
+}
+
+.output{
+    margin-top:30px;
+    background:#e8f5e9;
+    color:#000;
+    padding:20px;
+    border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>👨‍💼 Employee Registration Form</h1>
+
+    <form method="post">
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="ename" required></td>
+            </tr>
+            <tr>
+                <td>Employee ID</td>
+                <td><input type="text" name="eid" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>
+                    <select name="dept">
+                        <option>HR</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                        <option>Operations</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <%
+        if(request.getParameter("ename") != null){
+            String ename = request.getParameter("ename");
+            String eid = request.getParameter("eid");
+            String email = request.getParameter("email");
+            String dept = request.getParameter("dept");
+            String gender = request.getParameter("gender");
+            String address = request.getParameter("address");
+    %>
+
+    <div class="output">
+        <h2>📄 Employee Registration Details</h2>
+        <table border="1" cellpadding="10">
+            <tr><td>Name</td><td><%= ename %></td></tr>
+            <tr><td>Employee ID</td><td><%= eid %></td></tr>
+            <tr><td>Email</td><td><%= email %></td></tr>
+            <tr><td>Department</td><td><%= dept %></td></tr>
+            <tr><td>Gender</td><td><%= gender %></td></tr>
+            <tr><td>Address</td><td><%= address %></td></tr>
+        </table>
+        <h3>Registration Successful ✅</h3>
+    </div>
+
+    <%
+        }
+    %>
+
+</div>
+
+</body>
+</html>

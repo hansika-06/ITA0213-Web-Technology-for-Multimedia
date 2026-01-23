@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body bgcolor="#f0f8ff">
+
+<h2 align="center">Student Registration Form</h2>
+
+<form action="StudentServlet" method="post">
+<table align="center" cellpadding="10">
+
+<tr>
+    <td>Name:</td>
+    <td><input type="text" name="name" required></td>
+</tr>
+
+<tr>
+    <td>Register Number:</td>
+    <td><input type="text" name="regno" required></td>
+</tr>
+
+<tr>
+    <td>Email:</td>
+    <td><input type="email" name="email" required></td>
+</tr>
+
+<tr>
+    <td>Department:</td>
+    <td>
+        <select name="dept">
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>MECH</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Gender:</td>
+    <td>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+    </td>
+</tr>
+
+<tr>
+    <td>Address:</td>
+    <td><textarea name="address"></textarea></td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+        <input type="submit" value="Register">
+    </td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
