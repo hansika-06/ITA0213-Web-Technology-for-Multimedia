@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frameset Web Page</title>
+</head>
+
+<!-- Frameset replaces body -->
+<frameset rows="20%, 80%">
+
+    <!-- Top frame -->
+    <frame src="data:text/html,
+        <html>
+        <body bgcolor='lightblue'>
+        <h2 align='center'>Header Frame</h2>
+        </body>
+        </html>">
+
+    <!-- Bottom divided into two columns -->
+    <frameset cols="30%, 70%">
+
+        <frame src="data:text/html,
+            <html>
+            <body bgcolor='lightgray'>
+            <h3>Menu Frame</h3>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            </body>
+            </html>">
+
+        <frame src="data:text/html,
+            <html>
+            <body>
+            <h3>Content Frame</h3>
+            <p>This is the main content area.</p>
+            </body>
+            </html>">
+
+    </frameset>
+
+</frameset>
+
+</html>
