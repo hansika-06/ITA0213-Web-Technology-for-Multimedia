@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful Animated Web Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(270deg, #ff6a00, #ee0979, #00c6ff, #7f00ff);
+            background-size: 600% 600%;
+            animation: bgAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 36px;
+            background: linear-gradient(90deg, #ff512f, #dd2476, #24c6dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff512f; }
+            to { text-shadow: 0 0 25px #24c6dc; }
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #24c6dc, #514a9d);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Animated Web Page</h1>
+        <p>HTML + CSS animations with colorful effects</p>
+        <button class="btn">Click Me</button>
+    </div>
+
+</body>
+</html>

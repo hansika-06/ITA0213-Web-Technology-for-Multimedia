@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Job Portal Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #24c6dc, #514a9d);
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.forms["jobForm"]["name"].value;
+            var email = document.forms["jobForm"]["email"].value;
+            var phone = document.forms["jobForm"]["phone"].value;
+            var course = document.forms["jobForm"]["course"].value;
+
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            if (phone == "" || phone.length != 10) {
+                alert("Enter a valid 10-digit phone number");
+                return false;
+            }
+
+            if (course == "") {
+                alert("Please select a course");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Job Portal Registration</h2>
+
+        <form name="jobForm" onsubmit="return validateForm()">
+            <label>Student Name</label>
+            <input type="text" name="name" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email">
+
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter 10-digit number">
+
+            <label>Course</label>
+            <select name="course">
+                <option value="">--Select Course--</option>
+                <option>B.E / B.Tech</option>
+                <option>B.Sc</option>
+                <option>BCA</option>
+                <option>MCA</option>
+            </select>
+
+            <label>Skills</label>
+            <input type="text" placeholder="Eg: Java, Python, Web Development">
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
